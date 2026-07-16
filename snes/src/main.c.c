@@ -18,7 +18,7 @@ int main(void)
 
     consoleDrawText(8, 7,  "THE LEGEND OF");
     consoleDrawText(10, 10, "ASTERION");
-    consoleDrawText(9, 14, "VERSION 0.0.1");
+    consoleDrawText(9, 14, "VERSION 0.0.2");
     consoleDrawText(10, 18, "PRESS START");
 
     setScreenOn();
@@ -26,6 +26,17 @@ int main(void)
     while (1)
     {
         WaitForVBlank();
+
+        if (padsDown(0) & KEY_START)
+        {
+            consoleDrawText(8, 7,  "             ");
+            consoleDrawText(10, 10, "        ");
+            consoleDrawText(9, 14, "             ");
+            consoleDrawText(10, 18, "           ");
+
+            consoleDrawText(11, 10, "LOADING...");
+            consoleDrawText(5, 14, "CIDADE DA ESPERANCA");
+        }
     }
 
     return 0;
